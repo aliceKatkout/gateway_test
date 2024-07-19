@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package user;
+option go_package="./users";
+
+message UserMsg {
+      string name = 1;
+      string email = 2;
+      string password = 3;
+}
+
+service User {
+      rpc CreateUser(UserMsg) returns (UserMsg) {}
+      rpc Login(UserMsg) returns (UserMsg) {}
+}
